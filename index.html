@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASF Packing | Price list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --main-color: #c62828; 
+            --main-hover: #b71c1c; 
+            --gold-color: #d4af37; 
+            --gold-hover: #b8962e;
+            --dark-bg: #fee1b7; 
+            --card-bg: #ffffff; 
+            --text-main: #2c3e50; 
+            --text-muted: #7f8c8d; 
+            --border-color: #f0e6d2; 
+            --accent-light: #fffaf0; 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER STYLING ===== */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo-image {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text-area {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-text-area:hover {
+            transform: translateX(-5px);
+        }
+
+        .logo-brand-name {
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--text-main), var(--main-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-char-black {
+            color: var(--text-main);
+        }
+
+        .logo-char-red {
+            color: var(--main-color);
+        }
+
+        .logo-brand-sub {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--gold-color);
+            letter-spacing: 2px;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-icon-btn {
+            position: relative;
+            background: #fff;
+            border: 2px solid var(--gold-color);
+            color: var(--gold-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cart-icon-btn:hover {
+            background: var(--accent-light);
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--main-color);
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(198, 40, 40, 0.3);
+        }
+
+        .cta-top {
+            background: var(--main-color);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-top:hover {
+            background: var(--main-hover);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.4);
+        }
+
+        /* ===== SHOPPING CART MODAL ===== */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(44, 62, 80, 0.6);
+            z-index: 1000;
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .cart-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .cart-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .cart-header h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--main-color);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-cart:hover {
+            color: var(--main-color);
+            transform: rotate(90deg);
+        }
+
+        .cart-items-list {
+            margin-bottom: 25px;
+            min-height: 100px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 30px 20px;
+            font-size: 16px;
+        }
+
+        .cart-item {
+            background: var(--dark-bg);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .cart-item:hover {
+            border-color: var(--gold-color);
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.1);
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .cart-item-details {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .qty-btn {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            color: var(--main-color);
+            width: 28px;
+            height: 28px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            font-weight: bold;
+        }
+
+        .qty-btn:hover {
+            background-color: var(--main-color);
+            color: white;
+            border-color: var(--main-color);
+        }
+
+        .qty-input {
+            width: 40px;
+            height: 28px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            -moz-appearance: textfield; 
+            background: #fff;
+        }
+
+        .qty-input::-webkit-outer-spin-button,
+        .qty-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .cart-item-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--main-color);
+            margin: 0 15px;
+        }
+
+        .remove-item-btn {
+            background: #fff5f5;
+            border: 1px solid rgba(198, 40, 40, 0.3);
+            color: var(--main-color);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .remove-item-btn:hover {
+            background: var(--main-color);
+            color: white;
+            border-color: var(--main-color);
+            transform: scale(1.1);
+        }
+
+        .cart-summary {
+            background: var(--accent-light);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .summary-row:last-child {
+            margin-bottom: 0;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .summary-label {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .summary-value {
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: var(--main-color);
+            color: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .checkout-btn:hover {
+            background: var(--main-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(198, 40, 40, 0.4);
+        }
+
+        .checkout-btn:disabled {
+            background: #ccc;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ===== INTRO SECTION ===== */
+        .intro-section {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--dark-bg) 100%);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .intro-section h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .intro-section h1 span {
+            color: var(--main-color);
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto;
+            font-weight: 600;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            padding: 50px 8%;
+            background: #fff;
+            margin: 40px 8%;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.05);
+            position: relative;
+        }
+
+        .about-section h2 {
+            color: var(--text-main);
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .about-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-color), var(--main-color));
+            border-radius: 2px;
+        }
+
+        .about-section p {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features-section {
+            padding: 60px 8%;
+            background: var(--accent-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+            border-color: var(--gold-color);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--gold-color);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            color: var(--main-color);
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== CATALOG SECTION ===== */
+        .catalog-container {
+            padding: 60px 8%;
+            background: var(--dark-bg);
+        }
+
+        .catalog-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .catalog-header h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .catalog-header p {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        /* ===== PRODUCT CARD ===== */
+        .product-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(198, 40, 40, 0.08);
+            border-color: var(--main-color);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: var(--accent-light);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            min-height: 30px;
+            border-right: 4px solid var(--gold-color);
+            padding-right: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown-group {
+            margin-bottom: 20px;
+        }
+
+        .dropdown-group label {
+            font-size: 13px;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .size-select {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background-color: var(--dark-bg);
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .size-select:hover, .size-select:focus {
+            border-color: var(--gold-color);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .components-checklist {
+            max-height: 200px;
+            overflow-y: auto;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .components-checklist::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .components-checklist::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .components-checklist::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-main);
+            margin-bottom: 5px;
+            cursor: pointer;
+            padding: 8px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .check-item:hover {
+            background: #fff;
+        }
+
+        .check-item-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .check-item input {
+            accent-color: var(--main-color);
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
+
+        .item-price-tag {
+            color: var(--main-color);
+            font-size: 11px;
+            font-weight: bold;
+            background: rgba(198, 40, 40, 0.08);
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+
+        .price-display {
+            background: var(--accent-light);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .price-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .price-amount {
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--main-color);
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .order-now-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--main-color); 
+            color: #fff;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            border: none;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .order-now-btn:hover {
+            background: var(--main-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
+        }
+
+        .add-to-cart-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #fff;
+            color: var(--gold-color);
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid var(--gold-color);
+            transition: all 0.3s ease;
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--gold-color);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        /* ===== ADDITIONAL SERVICES SECTION ===== */
+        .additional-services {
+            padding: 60px 8%;
+            background: #fff;
+            margin: 40px 8%;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services-header h2 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .services-header p {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--dark-bg);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+            border-color: var(--gold-color);
+            background: #fff;
+        }
+
+        .service-icon {
+            font-size: 45px;
+            color: var(--gold-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-btn {
+            background: #fff;
+            color: var(--main-color);
+            border: 2px solid var(--main-color);
+            padding: 10px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-btn:hover {
+            background: var(--main-color);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.2);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #fff;
+            color: var(--text-muted);
+            padding: 60px 20px 40px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        footer .social-links {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer .social-links a {
+            color: var(--text-main);
+            font-size: 20px;
+            background: var(--dark-bg);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        footer .social-links a.fb-link:hover {
+            background: #1877f2;
+            color: #fff;
+            border-color: #1877f2;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+        }
+
+        footer p {
+            font-size: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--text-main);
+        }
+
+        footer p i {
+            color: var(--gold-color);
+            font-size: 16px;
+        }
+
+        footer .copyright {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* ===== FLOATING BUTTONS ===== */
+        .floating-btn {
+            position: fixed;
+            left: 25px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: white;
+            text-decoration: none;
+            z-index: 999;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+        }
+
+        .whatsapp-ball {
+            bottom: 25px;
+            background: #25d366;
+        }
+
+        .facebook-ball {
+            bottom: 95px;
+            background: #1877f2;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            header { padding: 12px 5%; }
+            .logo-image { height: 50px; }
+            .logo-brand-name { font-size: 26px; }
+            .intro-section { padding: 60px 15px 40px; }
+            .intro-section h1 { font-size: 32px; }
+            .about-section, .additional-services { margin: 30px 5%; padding: 35px 5%; }
+            .products-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+            .product-image { height: 220px; }
+            .floating-btn { width: 50px; height: 50px; font-size: 24px; }
+            .facebook-ball { bottom: 85px; }
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 10px 3%; flex-direction: column; gap: 15px; }
+            .header-left { width: 100%; justify-content: space-between; }
+            .header-nav { width: 100%; justify-content: flex-end; }
+            .logo-image { height: 40px; }
+            .logo-brand-name { font-size: 22px; }
+            .intro-section h1 { font-size: 26px; }
+            .products-grid { grid-template-columns: 1fr; }
+            .floating-btn { left: 15px; }
+            .product-actions { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030694296/lxLheRZzYzwFRWMZ.png" alt="ASF Packing Logo" class="logo-image">
+            <div class="logo-text-area">
+                <div class="logo-brand-name">
+                    <span class="logo-char-black">A</span><span class="logo-char-red">SF Packing</span>
+                </div>
+                <div class="logo-brand-sub">For Catering Supplies</div>
+            </div>
+        </div>
+        <div class="header-nav">
+            <button class="cart-icon-btn" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <a href="https://wa.me/201553332753" class="cta-top" target="_blank"><i class="fa-brands fa-whatsapp"></i> اطلب الآن</a>
+        </div>
+    </header>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2><i class="fas fa-shopping-cart"></i> سلة المشتريات</h2>
+                <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items-list" id="cartItemsList">
+                <div class="cart-empty">سلتك فارغة حالياً</div>
+            </div>
+            <div class="cart-summary" id="cartSummary" style="display: none;">
+                <div class="summary-row">
+                    <span class="summary-label">عدد المنتجات:</span>
+                    <span class="summary-value" id="totalItems">0</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">الإجمالي:</span>
+                    <span class="summary-value" id="totalPrice">0 ج.م</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" onclick="checkout()" disabled>
+                <i class="fa-brands fa-whatsapp"></i> إتمام الطلب عبر واتس آب
+            </button>
+        </div>
+    </div>
+
+    <section class="intro-section">
+        <h1>صناعة التميز لمشروعك مع <span>ASF Packing</span></h1>
+        <p>مستلزمات الفنادق والمطاعم والكافيهات بأعلى جودة وطباعة فاخرة لشعارك.</p>
+    </section>
+
+    <section class="about-section">
+        <h2>مَن نَحنُ؟</h2>
+        <p>شركة <strong>ASF Packing</strong> هي شريككم الاستراتيجي الرائد والمتخصص في توفير أرقى مستلزمات وتجهيزات الفنادق، المطاعم، والكافيهات (Catering Supplies) في مصر. نحن لا نقدم مجرد منتجات تعبئة وتغليف، بل نصنع هوية بصرية فريدة لمشروعكم من خلال خدمات تصميم اللوجوهات والطباعة الاحترافية والفاخرة على كافة المنتجات، لنضمن تقديم علامتكم التجارية بأعلى مستويات الجودة التي تليق بعملائكم.</p>
+    </section>
+
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                <h3>جودة عالية</h3>
+                <p>منتجات مختارة بعناية فائقة تضمن رضاك التام</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-palette"></i></div>
+                <h3>تصميم احترافي</h3>
+                <p>طباعة فاخرة وتصاميم مخصصة لعلامتك التجارية</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                <h3>تسليم سريع</h3>
+                <p>توصيل فوري وآمن لجميع أنحاء مصر</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3>دعم مميز</h3>
+                <p>فريق متخصص جاهز لخدمتك 24/7</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-container">
+        <div class="catalog-header">
+            <h2>كتالوج المنتجات</h2>
+            <p>اختر من مجموعتنا الواسعة من مستلزمات الفنادق والمطاعم</p>
+        </div>
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1n-gnxi-TrdNJDaVa6w5qX1gZPDmn8xLI" alt="مناديل سادة سفرة">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">مناديل سادة ( سفرة )</div>
+                    <div class="dropdown-group">
+                        <label>اختر الوزن المطلوب:</label>
+                        <select class="size-select" id="select-p1" onchange="updateProduct('p1', 'مناديل سادة سفرة')">
+                            <option value="190">22cm </option>
+                            <option value="200">24cm </option>
+                            <option value="310">33cm </option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p1">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p1" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p1', 'مناديل سادة سفرة')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1PNYorRVuENfu0Okt19IlM1x-9yg4JFxy" alt="مناديل مطبوع سفرة">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">مناديل مطبوع ( سفرة )</div>
+                    <div class="dropdown-group">
+                        <label>اختر الوزن المطلوب:</label>
+                        <select class="size-select" id="select-p2" onchange="updateProduct('p2', 'مناديل مطبوع سفرة')">
+                            <option value="200">22cm </option>
+                            <option value="210">24cm </option>
+                            <option value="320">33cm </option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p2">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p2" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p2', 'مناديل مطبوع سفرة')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1rw8LAe7FuchJg_CSCFqmjzVFx4tBOONn" alt="مناديل فولد">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">مناديل فولد</div>
+                    <div class="dropdown-group">
+                        <label>اختر الوزن المطلوب:</label>
+                        <select class="size-select" id="select-p3" onchange="updateProduct('p3', 'مناديل فولد')">
+                            <option value="250">2.5ك </option>
+                            <option value="300">3ك </option>
+                             <option value="400">4ك </option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للباله:</span>
+                        <span class="price-amount" id="p3">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p3" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p3', 'مناديل فولد')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1BNmEw8NQdF2eZBeQ1ELZYBS1-hFN-dOS" alt="علب مناديل">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">علب مناديل 80</div>
+                    <div class="dropdown-group">
+                        <label>نوع التعبئة والتصميم:</label>
+                        <select class="size-select" id="select-p4" onchange="updateProduct('p4', 'علب مناديل 80')">
+                            <option value="15">سادة</option>
+                            <option value="18">مطبوع بالشعار الخاص</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للعلبه:</span>
+                        <span class="price-amount" id="p4">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p4" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p4', 'علب مناديل 80')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1WAwWzVaeH2Swe9MppgakmzPdlHs7hFvZ" alt="سادة CANS">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">سادة CANS</div>
+                    <div class="dropdown-group">
+                        <label>اختر السعة:</label>
+                        <select class="size-select" id="select-p5" onchange="updateProduct('p5', 'سادة CANS')">
+                            <option value="15">330ML</option>
+                            <option value="16">500ML</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للعبوة:</span>
+                        <span class="price-amount" id="p5">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p5" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p5', 'سادة CANS')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1oTA6pvj2Eew8ZByWuQiNAshyOR3e5Ciq" alt="مطبوع CANS">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">مطبوع CANS</div>
+                    <div class="dropdown-group">
+                        <label>اختر السعة:</label>
+                        <select class="size-select" id="select-p6" onchange="updateProduct('p6', 'مطبوع CANS')">
+                            <option value="16.5">330ML</option>
+                            <option value="18.5">500ML</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للعبوة:</span>
+                        <span class="price-amount" id="p6">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p6" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p6', 'مطبوع CANS')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1oTLMbQRpZo8esg5ZTYJOGU-e7D0eSSHP" alt="كوبيات سادة ورقية">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">كوبيات سادة ورقية</div>
+                    <div class="dropdown-group">
+                        <label>الحجم بالأونز:</label>
+                        <select class="size-select" id="select-p7" onchange="updateProduct('p7', 'كوبيات سادة ورقية')">
+                            <option value="1100">4 أونز</option>
+                            <option value="1550">8 أونز</option>
+                            <option value="1700">12 أونز</option>
+                            <option value="1800">16 أونز</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p7">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p7" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p7', 'كوبيات سادة ورقية')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1WiUgw3qxE7Ay_tNxYZRgFC7vi1xC2w5Q" alt="كوبيات مطبوع ورقية">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">كوبيات مطبوع ورقية</div>
+                    <div class="dropdown-group">
+                        <label>الحجم بالأونز:</label>
+                        <select class="size-select" id="select-p8" onchange="updateProduct('p8', 'كوبيات مطبوع ورقية')">
+                            <option value="2500">4 أونز</option>
+                            <option value="3350">8 أونز</option>
+                            <option value="3700">12 أونز</option>
+                            <option value="4000">16 أونز</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p8">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p8" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p8', 'كوبيات مطبوع ورقية')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1Pwm14oymqJsvg0pogwmbM3-0SmW0z-tc" alt="كوفير سادة">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">كوفير سادة</div>
+                    <div class="dropdown-group">
+                        <label>اختر مكونات الكيس السادة:</label>
+                        <div class="components-checklist" id="check-group-p9">
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="معلقة" data-price="350" onchange="updateProduct('p9', 'كوفير سادة')"> معلقة</div><span class="item-price-tag">530 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="شوكة" data-price="450" onchange="updateProduct('p9', 'كوفير سادة')"> شوكة</div><span class="item-price-tag">450 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="سكينة" data-price="450" onchange="updateProduct('p9', 'كوفير سادة')"> سكينة</div><span class="item-price-tag">450 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="معلقة حلو" data-price="170" onchange="updateProduct('p9', 'كوفير سادة')"> معلقة حلو</div><span class="item-price-tag">170 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="ملح" data-price="55" onchange="updateProduct('p9', 'كوفير سادة')"> ملح</div><span class="item-price-tag">55 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="فلفل" data-price="130" onchange="updateProduct('p9', 'كوفير سادة')"> فلفل</div><span class="item-price-tag">130 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="سكر" data-price="250" onchange="updateProduct('p9', 'كوفير سادة')"> سكر</div><span class="item-price-tag">250 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="جوانتى" data-price="250" onchange="updateProduct('p9', 'كوفير سادة')"> جوانتى</div><span class="item-price-tag">250 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="خله" data-price="0.15" onchange="updateProduct('p9', 'كوفير سادة')"> خله</div><span class="item-price-tag">85 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="منديل" data-price="310" onchange="updateProduct('p9', 'كوفير سادة')"> منديل</div><span class="item-price-tag">310 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="منديل معطر" data-price="330" onchange="updateProduct('p9', 'كوفير سادة')"> منديل معطر</div><span class="item-price-tag">330 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="كريمر" data-price="350" onchange="updateProduct('p9', 'كوفير سادة')"> كريمر</div><span class="item-price-tag">350 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="كاتشب" data-price="900" onchange="updateProduct('p9', 'كوفير سادة')"> كاتشب</div><span class="item-price-tag">900 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="لبان" data-price="1000" onchange="updateProduct('p9', 'كوفير سادة')"> لبان</div><span class="item-price-tag">1000 ج.م</span></label>
+                        </div>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف الطقم المختار:</span>
+                        <span class="price-amount" id="p9">0 ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p9" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p9', 'كوفير سادة')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1h7iWgxRj1Q-VbrDmYZplpKNvd61n1FQE" alt="كوفير مطبوع">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">كوفير مطبوع</div>
+                    <div class="dropdown-group">
+                        <label>اختر مكونات الكيس المطبوع:</label>
+                        <div class="components-checklist" id="check-group-p10">
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="معلقة" data-price="530" onchange="updateProduct('p10', 'كوفير مطبوع')"> معلقة</div><span class="item-price-tag">530 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="شوكة" data-price="450" onchange="updateProduct('p10', 'كوفير مطبوع')"> شوكة</div><span class="item-price-tag">450 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="سكينة" data-price="450" onchange="updateProduct('p10', 'كوفير مطبوع')"> سكينة</div><span class="item-price-tag">450 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="معلقة حلو" data-price="170" onchange="updateProduct('p10', 'كوفير مطبوع')"> معلقة حلو</div><span class="item-price-tag">170 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="ملح" data-price="55" onchange="updateProduct('p10', 'كوفير مطبوع')"> ملح</div><span class="item-price-tag">55 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="فلفل" data-price="130" onchange="updateProduct('p10', 'كوفير مطبوع')"> فلفل</div><span class="item-price-tag">130 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="سكر" data-price="250" onchange="updateProduct('p10', 'كوفير مطبوع')"> سكر</div><span class="item-price-tag">250 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="جوانتى" data-price="250" onchange="updateProduct('p10', 'كوفير مطبوع')"> جوانتى</div><span class="item-price-tag">250 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="خله" data-price="85" onchange="updateProduct('p10', 'كوفير مطبوع')"> خله</div><span class="item-price-tag">85 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="منديل" data-price="310" onchange="updateProduct('p10', 'كوفير مطبوع')"> منديل</div><span class="item-price-tag">310 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="منديل معطر" data-price="330" onchange="updateProduct('p10', 'كوفير مطبوع')"> منديل معطر</div><span class="item-price-tag">330 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="كريمر" data-price="350" onchange="updateProduct('p10', 'كوفير مطبوع')"> كريمر</div><span class="item-price-tag">350 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="كاتشب" data-price="900" onchange="updateProduct('p10', 'كوفير مطبوع')"> كاتشب</div><span class="item-price-tag">900 ج.م</span></label>
+                            <label class="check-item"><div class="check-item-right"><input type="checkbox" value="لبان" data-price="1000" onchange="updateProduct('p10', 'كوفير مطبوع')"> لبان</div><span class="item-price-tag">1000 ج.م</span></label>
+                        </div>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">سعر للألف الطقم المختار:</span>
+                        <span class="price-amount" id="p10">0 ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p10" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p10', 'كوفير مطبوع')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1KbSF190q_7xX-E9ar8EgcWbdBd-fbeaG" alt="شاليموه سادة">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">شاليموه سادة</div>
+                    <div class="dropdown-group">
+                        <label>اختر حجم الشاليموه:</label>
+                        <select class="size-select" id="select-p11" onchange="updateProduct('p11', 'شاليموه سادة')">
+                            <option value="320">6</option>
+                            <option value="380">8</option>
+                            <option value="650">10</option>
+                            <option value="750">12</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p11">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p11" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p11', 'شاليموه سادة')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1nIGZld1dHflN1AMk2Af9BQ9mXLZCtlmy" alt="شاليموه مطبوع">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">شاليموه مطبوع</div>
+                    <div class="dropdown-group">
+                        <label>اختر حجم الشاليموه:</label>
+                        <select class="size-select" id="select-p12" onchange="updateProduct('p12', 'شاليموه مطبوع')">
+                            <option value="350">6</option>
+                            <option value="400">8</option>
+                            <option value="670">10</option>
+                            <option value="780">12</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p12">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p12" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p12', 'شاليموه مطبوع')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1xaVDpxXlNyBHY6fqKPL1_xde5ri91Lro" alt="سكر بورشن">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">سكر بورشن</div>
+                    <div class="dropdown-group">
+                        <label>نوع التغليف:</label>
+                        <select class="size-select" id="select-p13" onchange="updateProduct('p13', 'سكر بورشن')">
+                            <option value="450">أبيض</option>
+                            <option value="670">بنى</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للكرتونة:</span>
+                        <span class="price-amount" id="p13">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p13" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p13', 'سكر بورشن')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1a8Yi1Y1AtM7zjvnvsOCqPNmAWhAsId09" alt="توابل بورشن">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">توابل بورشن</div>
+                    <div class="dropdown-group">
+                        <label>نوع التغليف:</label>
+                        <select class="size-select" id="select-p14" onchange="updateProduct('p14', 'توابل بورشن')">
+                            <option value="55">ملح</option>
+                            <option value="130">فلفل</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p14">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p14" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p14', 'توابل بورشن')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1gs2NAlNKdiUu2i1JyGIbliyRQ70HAJxu" alt="معطر سادة">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">معطر سادة</div>
+                    <div class="dropdown-group">
+                        <label>نوع التغليف وطباعة اللوجو:</label>
+                        <select class="size-select" id="select-p15" onchange="updateProduct('p15', 'معطر سادة')">
+                            <option value="460">ورق سادة</option>
+                            <option value="310">بلاستيك سادة</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p15">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p15" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p15', 'معطر سادة')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1o60VeW3jw69c2euy16irtAKwBIsrbIEF" alt="معطر مطبوع">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">معطر مطبوع</div>
+                    <div class="dropdown-group">
+                        <label>نوع التغليف وطباعة اللوجو:</label>
+                        <select class="size-select" id="select-p16" onchange="updateProduct('p16', 'معطر مطبوع')">
+                            <option value="480">ورق مطبوع بالكامل</option>
+                            <option value="330">بلاستيك مطبوع بالكامل</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p16">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p16" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p16', 'معطر مطبوع')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1SIFlpV0PA9X51WZ59XposwY9G5-VoY7o" alt="كوبيات بلاستيك شيب U">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">كوبيات بلاستيك شيب U</div>
+                    <div class="dropdown-group">
+                        <label>الحجم بالأونز:</label>
+                        <select class="size-select" id="select-p17" onchange="updateProduct('p17', 'كوبيات بلاستيك شيب U')">
+                            <option value="3100">12 أونز</option>
+                            <option value="3300">14 أونز</option>
+                            <option value="3500">16 أونز</option>
+                            <option value="3650">18 أونز</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p17">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p17" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p17', 'كوبيات بلاستيك شيp U')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1EvQJUEVLDPOn-mw0M3b9UXvejN0kDmeH" alt="كوبيات مطبوع بلاستيك">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">كوبيات مطبوع بلاستيك</div>
+                    <div class="dropdown-group">
+                        <label>الحجم بالأونز وطباعة اللوجو:</label>
+                        <select class="size-select" id="select-p18" onchange="updateProduct('p18', 'كوبيات مطبوع بلاستيك')">
+                            <option value="2800">12 أونز</option>
+                            <option value="2900">14 أونز</option>
+                            <option value="3050">16 أونز</option>
+                            <option value="3200">18 أونز</option>
+                            <option value="3300">20 أونز</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p18">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p18" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p18', 'كوبيات مطبوع بلاستيك')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/15QzjRFt6w8-XmQWeEzx_z41vwqGwoehM" alt="مناديل رول جامبو مطبخ">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">مناديل رول جامبو ( مطبخ )</div>
+                    <div class="dropdown-group">
+                        <label>اختر وزن الرول:</label>
+                        <select class="size-select" id="select-p19" onchange="updateProduct('p19', 'مناديل رول جامبو مطبخ')">
+                            <option value="150">1.5 ك</option>
+                            <option value="120">1.200 ك</option>
+                            <option value="100">1 ك</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للرول:</span>
+                        <span class="price-amount" id="p19">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p19" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p19', 'مناديل رول جامبو مطبخ')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1XTDT3dioKTqMMGpv56IO-8cJz8r3ry7K" alt="خلة أسنان مغلفة">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">خلة أسنان مغلفة</div>
+                    <div class="dropdown-group">
+                        <label>النوع والتغليف:</label>
+                        <select class="size-select" id="select-p20" onchange="updateProduct('p20', 'خلة أسنان مغلفة')">
+                            <option value="85">سادة</option>
+                            <option value="90">مطبوع عليها شعارك</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p20">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p20" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p20', 'خلة أسنان مغلفة')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://lh3.googleusercontent.com/d/1S4Kr_NExA-NVgkIlZgDCE5hm1gUCJuxi" alt="جوانتي بلاستيك">
+                </div>
+                <div class="product-content">
+                    <div class="product-title">جوانتي بلاستيك</div>
+                    <div class="dropdown-group">
+                        <label>طريقة التعبئة والتقديم:</label>
+                        <select class="size-select" id="select-p21" onchange="updateProduct('p21', 'جوانتي بلاستيك')">
+                            <option value="250">مطبق عادي</option>
+                            <option value="350">مغلف فريندلي</option>
+                        </select>
+                    </div>
+                    <div class="price-display">
+                        <span class="price-text">السعر للألف:</span>
+                        <span class="price-amount" id="p21">-- ج.م</span>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#" id="btn-p21" class="order-now-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب</a>
+                        <button class="add-to-cart-btn" onclick="addToCart('p21', 'جوانتي بلاستيك')"><i class="fas fa-plus"></i> سلة</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="additional-services">
+        <div class="services-header">
+            <h2>خدمات إضافية</h2>
+            <p>نقدم لك خدمات متخصصة لتعزيز هويتك البصرية وتميز علامتك التجارية</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-image"></i></div>
+                <h3>أكلشية اللوجو</h3>
+                <p>خدمة متخصصة في تصميم وطباعة أكلشيات احترافية بألوان زاهية وجودة عالية تحمل شعارك وتعكس هويتك البصرية بكل احترافية.</p>
+                <a href="https://wa.me/201553332753?text=أهلاً%20ASF%20Packing%20أود%20الاستفسار%20عن%20خدمة%20أكلشية%20اللوجو" class="service-btn" target="_blank">
+                    <i class="fas fa-phone"></i> استفسر الآن
+                </a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
+                <h3>تصميم اللوجو</h3>
+                <p>فريقنا المتخصص يقدم خدمات تصميم لوجو احترافية وفريدة تعكس قيم علامتك التجارية وتميزك عن المنافسين بتصاميم عصرية وجذابة.</p>
+                <a href="https://wa.me/201553332753?text=أهلاً%20ASF%20Packing%20أود%20الاستفسار%20عن%20خدمة%20تصميم%20اللوجو" class="service-btn" target="_blank">
+                    <i class="fas fa-phone"></i> استفسر الآن
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/asfpackingforcatering" class="fb-link" target="_blank" title="تابعنا على فيسبوك">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+        </div>
+        <p><i class="fa-solid fa-phone"></i> للتواصل والطلب الفوري: 01553332753</p>
+        <p><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: ASFpackingforcatering@gmail.com</p>
+        <p><i class="fa-solid fa-location-dot"></i> المقر الرئيسي: شارع المؤسسة المرج - القاهرة - مصر</p>
+        <div class="copyright">© 2026 جميع الحقوق محفوظة لشركة ASF packing للطباعة والتوريدات.</div>
+    </footer>
+
+    <a href="https://www.facebook.com/asfpackingforcatering" class="floating-btn facebook-ball" target="_blank" title="تابعنا على فيسبوك">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    
+    <a href="https://wa.me/201553332753" class="floating-btn whatsapp-ball" target="_blank" title="تواصل معنا عبر واتس آب">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const productChanges = {
+            p1: 0, p2: 0, p3: 0, p4: 0, p5: 0, p6: 0, p7: 0, p8: 0, p9: 0, p10: 0,
+            p11: 0, p12: 0, p13: 0, p14: 0, p15: 0, p16: 0, p17: 0, p18: 0, p19: 0, p20: 0, p21: 0
+        };
+
+        let shoppingCart = [];
+
+        function updateProduct(id, productName) {
+            let selectedText = "";
+            let finalPrice = 0;
+            const currentPercentage = productChanges[id] || 0;
+
+            if (id === 'p9' || id === 'p10') {
+                const checkedBoxes = document.querySelectorAll(`#check-group-${id} input[type="checkbox"]:checked`);
+                let itemsArray = [];
+                let totalItemsPrice = 0;
+                
+                checkedBoxes.forEach(box => {
+                    itemsArray.push(box.value);
+                    totalItemsPrice += parseFloat(box.getAttribute('data-price'));
+                });
+                
+                selectedText = itemsArray.length > 0 ? itemsArray.join(' + ') : "لم يتم اختيار أي بند";
+                finalPrice = totalItemsPrice;
+                
+            } else {
+                const selectElement = document.getElementById("select-" + id);
+                finalPrice = parseFloat(selectElement.value); 
+                selectedText = selectElement.options[selectElement.selectedIndex].text;
+            }
+            
+            if (currentPercentage !== 0) {
+                finalPrice = finalPrice + (finalPrice * (currentPercentage / 100));
+            }
+            
+            if (id === 'p9' || id === 'p10') {
+                finalPrice = parseFloat(finalPrice.toFixed(2));
+            } else {
+                finalPrice = Math.round(finalPrice);
+            }
+
+            document.getElementById(id).innerText = finalPrice + " ج.م";
+
+            const whatsappBtn = document.getElementById("btn-" + id);
+            const message = `أهلاً ASF Packing، أود الاستفسار وطلب منتج:\n📦 الاسم: ${productName}\n📐 المكونات/المواصفات المختارة: [ ${selectedText} ]\n💰 السعر الموضح للوحدة: ${finalPrice} ج.م`;
+            whatsappBtn.href = "https://wa.me/201553332753?text=" + encodeURIComponent(message);
+        }
+
+        function addToCart(productId, productName) {
+            let price = document.getElementById(productId).innerText;
+            let selectedOption = "";
+
+            if (productId === 'p9' || productId === 'p10') {
+                const checkedBoxes = document.querySelectorAll(`#check-group-${productId} input[type="checkbox"]:checked`);
+                let itemsArray = [];
+                checkedBoxes.forEach(box => {
+                    itemsArray.push(box.value);
+                });
+                selectedOption = itemsArray.length > 0 ? itemsArray.join(', ') : "بدون خيارات";
+            } else {
+                const selectElement = document.getElementById("select-" + productId);
+                selectedOption = selectElement.options[selectElement.selectedIndex].text;
+            }
+
+            let existingItem = shoppingCart.find(item => item.id === productId && item.option === selectedOption);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                const cartItem = {
+                    id: productId,
+                    name: productName,
+                    price: price,
+                    option: selectedOption,
+                    quantity: 1, 
+                    timestamp: Date.now()
+                };
+                shoppingCart.push(cartItem);
+            }
+
+            updateCartUI();
+        }
+
+        function increaseQty(index) {
+            shoppingCart[index].quantity += 1;
+            updateCartUI();
+        }
+
+        function decreaseQty(index) {
+            if (shoppingCart[index].quantity > 1) {
+                shoppingCart[index].quantity -= 1;
+                updateCartUI();
+            }
+        }
+
+        function changeQty(index, value) {
+            let newQty = parseInt(value);
+            if (newQty > 0) {
+                shoppingCart[index].quantity = newQty;
+            } else {
+                shoppingCart[index].quantity = 1;
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(index) {
+            shoppingCart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsList = document.getElementById('cartItemsList');
+            const cartCount = document.getElementById('cartCount');
+            const cartSummary = document.getElementById('cartSummary');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            if (shoppingCart.length === 0) {
+                cartCount.innerText = "0";
+                cartItemsList.innerHTML = '<div class="cart-empty">سلتك فارغة حالياً</div>';
+                cartSummary.style.display = 'none';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            cartSummary.style.display = 'block';
+            checkoutBtn.disabled = false;
+
+            let totalPrice = 0;
+            let totalItemsCount = 0;
+
+            cartItemsList.innerHTML = shoppingCart.map((item, index) => {
+                const priceValue = parseFloat(item.price.replace(' ج.م', ''));
+                const itemTotalPrice = priceValue * item.quantity;
+                totalPrice += itemTotalPrice;
+                totalItemsCount += item.quantity;
+
+                return `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-details">${item.option}</div>
+                            
+                            <div class="cart-item-qty">
+                                <button class="qty-btn" onclick="decreaseQty(${index})">-</button>
+                                <input type="number" class="qty-input" value="${item.quantity}" onchange="changeQty(${index}, this.value)">
+                                <button class="qty-btn" onclick="increaseQty(${index})">+</button>
+                            </div>
+                        </div>
+                        <div class="cart-item-price">${Math.round(itemTotalPrice)} ج.م</div>
+                        <button class="remove-item-btn" onclick="removeFromCart(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+
+            cartCount.innerText = totalItemsCount;
+            document.getElementById('totalItems').innerText = totalItemsCount;
+            document.getElementById('totalPrice').innerText = Math.round(totalPrice) + ' ج.م';
+        }
+
+        function toggleCart() {
+            const cartModal = document.getElementById('cartModal');
+            cartModal.classList.toggle('active');
+        }
+
+        function checkout() {
+            if (shoppingCart.length === 0) return;
+
+            let message = "أهلاً ASF Packing، أود طلب المنتجات التالية:\n\n";
+            let totalPrice = 0;
+
+            shoppingCart.forEach((item, index) => {
+                const priceValue = parseFloat(item.price.replace(' ج.م', ''));
+                const itemTotalPrice = priceValue * item.quantity;
+                totalPrice += itemTotalPrice;
+                
+                message += `${index + 1}. ${item.name}\n   الخيار: ${item.option}\n   الكمية: ${item.quantity}\n   السعر الإجمالي: ${Math.round(itemTotalPrice)} ج.م\n\n`;
+            });
+
+            message += `\n📊 الإجمالي النهائي: ${Math.round(totalPrice)} ج.م`;
+
+            const whatsappUrl = "https://wa.me/201553332753?text=" + encodeURIComponent(message);
+            window.open(whatsappUrl, '_blank');
+        }
+
+        window.onload = function() {
+            updateProduct('p1', 'مناديل سادة سفرة');
+            updateProduct('p2', 'مناديل مطبوع سفرة');
+            updateProduct('p3', 'مناديل فولد');
+            updateProduct('p4', 'علب مناديل 80');
+            updateProduct('p5', 'سادة CANS');
+            updateProduct('p6', 'مطبوع CANS');
+            updateProduct('p7', 'كوبيات سادة ورقية');
+            updateProduct('p8', 'كوبيات مطبوع ورقية');
+            updateProduct('p9', 'كوفير سادة');
+            updateProduct('p10', 'كوفير مطبوع');
+            updateProduct('p11', 'شاليموه سادة');
+            updateProduct('p12', 'شاليموه مطبوع');
+            updateProduct('p13', 'سكر بورشن');
+            updateProduct('p14', 'توابل بورشن');
+            updateProduct('p15', 'معطر سادة');
+            updateProduct('p16', 'معطر مطبوع');
+            updateProduct('p17', 'كوبيات بلاستيك شيp U');
+            updateProduct('p18', 'كوبيات مطبوع بلاستيك');
+            updateProduct('p19', 'مناديل رول جامبو مطبخ');
+            updateProduct('p20', 'خلة أسنان مغلفة');
+            updateProduct('p21', 'جوانتي بلاستيك');
+        };
+    </script>
+
+</body>
+</html>
